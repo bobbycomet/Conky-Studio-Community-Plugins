@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conky Studio Community Store</title>
+<meta name="description" content="Browse visual and logic plugins for Conky Studio, contributed by the community.">
+
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to plugins</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/" aria-label="Conky Studio Community Store, home">
+      <img class="brand-mark" src="assets/icon.png" alt="" width="28" height="28">
+      <span class="brand-name">Conky Studio <span class="brand-sub">Community&nbsp;Store</span></span>
+    </a>
+    <div class="topbar-actions">
+      <label class="search" for="search-input">
+        <svg viewBox="0 0 20 20" aria-hidden="true" class="search-icon"><circle cx="8.5" cy="8.5" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="13.1" y1="13.1" x2="18" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input id="search-input" type="search" placeholder="Search plugins…" autocomplete="off">
+      </label>
+      <a class="btn btn-ghost" href="https://github.com/bobbycomet/Conky-Studio" target="_blank" rel="noopener">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="view-hero">
+    <div class="hero-inner">
+      <img class="hero-mark" src="assets/icon.png" alt="Conky Studio" width="88" height="88">
+      <h1 class="hero-title">Plugins, straight from the community.</h1>
+      <p class="hero-sub">
+        Visual and logic nodes other people built for Conky Studio's editor —
+        drop one into a project and it shows up on your palette next to the built‑ins.
+      </p>
+      <p class="hero-note">
+        Every entry here is plain JSON: metadata plus a Lua snippet substituted
+        into your theme. Nothing is compiled or hidden — open any plugin's detail
+        page and read the Lua before you trust it, the same way you would any
+        theme script you didn't write yourself.
+      </p>
+    </div>
+  </section>
+
+  <nav class="filter-rail" id="filter-rail" aria-label="Filter plugins by category">
+    <div class="filter-rail-inner">
+      <div class="trace" aria-hidden="true">
+        <svg viewBox="0 0 100 12" preserveAspectRatio="none" class="trace-svg">
+          <defs>
+            <linearGradient id="trace-gradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#29e0d1"/>
+              <stop offset="38%" stop-color="#7c5cff"/>
+              <stop offset="68%" stop-color="#ff4fd8"/>
+              <stop offset="100%" stop-color="#ffb020"/>
+            </linearGradient>
+          </defs>
+          <path class="trace-path" d="M0,6 L100,6" />
+          <path class="trace-pulse" d="M0,6 L100,6" />
+        </svg>
+      </div>
+      <div class="filter-tabs" id="filter-tabs" role="tablist" aria-label="Category"></div>
+      <div class="filter-tags" id="filter-tags" aria-label="Tags"></div>
+    </div>
+  </nav>
+
+  <section class="grid-section" id="view-grid" aria-live="polite">
+    <p class="result-count" id="result-count"></p>
+    <div class="plugin-grid" id="plugin-grid"></div>
+    <div class="state-panel" id="state-panel" hidden></div>
+  </section>
+
+  <section class="detail-section" id="view-detail" hidden>
+    <a class="back-link" href="#/">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M12 4 L6 10 L12 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to store
+    </a>
+    <div id="detail-content"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <p>
+      Sourced live from
+      <button class="link-btn" id="copy-manifest-url" type="button">this store's manifest.json <span aria-hidden="true">⧉</span></button>
+    </p>
+    <p class="site-footer-sub">
+      Want your plugin listed here? Open a pull request against the manifest —
+      see the <a href="https://github.com/bobbycomet/Conky-Studio/wiki/Plugins" target="_blank" rel="noopener">Plugins wiki page</a> for the schema.
+    </p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
