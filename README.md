@@ -1,1 +1,2 @@
 # This feature is being worked on for the 1.1.0 release of [![Conky Studio](https://img.shields.io/badge/Conky-Studio-1f6feb?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bobbycomet/Conky-Studio). If you have Conky Studio, this feature is not ready.
+
