@@ -10,7 +10,7 @@
     official: {
       id: "official",
       label: "Official pack",
-      url: "https://raw.githubusercontent.com/bobbycomet/Conky-Studio/main/manifest.json",
+      url: "https://raw.githubusercontent.com/bobbycomet/Conky-Studio/main/plugins.json",
     },
     community: {
       id: "community",
